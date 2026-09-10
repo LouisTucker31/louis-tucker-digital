@@ -149,7 +149,11 @@ textarea:focus-visible {
 }
 
 .measure h2 {
-  margin-top: var(--space-6);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.measure-p-spaced {
   margin-bottom: var(--space-3);
 }
 
