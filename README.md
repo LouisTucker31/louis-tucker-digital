@@ -14,7 +14,7 @@ natively on any static host, no rewrite rules or server config needed.
 | Services | `services/index.html` | `/services/` |
 | Work | `work/index.html` | `/work/` |
 | Contact | `contact/index.html` | `/contact/` |
-| Privacy policy | `privacy/index.html` | `/privacy/` |
+| Privacy notice | `privacy/index.html` | `/privacy/` |
 | 404 | `404.html` | (served automatically by most hosts on any unmatched path) |
 
 An optional `_redirects` file is included for Netlify-style hosts, it
@@ -48,7 +48,7 @@ still work. It isn't required for the site to function.
   line. If you trade as a limited company, add that disclosure, either
   as a short line in the footer or on the privacy page, it isn't
   required for a sole trader.
-- **Privacy policy**: `privacy/index.html` is a starting template, not
+- **Privacy notice**: `privacy/index.html` is a starting template, not
   legal advice. It's written to be accurate for the site as built (no
   analytics or cookies beyond what's needed to run it, Formspree as the
   only processor), but you should have the wording checked, add a real
