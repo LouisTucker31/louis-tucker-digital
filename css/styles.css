@@ -545,6 +545,21 @@ textarea:focus-visible {
   max-width: 48rem;
 }
 
+.case-study-helped {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.case-study-helped p {
+  margin: 0;
+}
+
+.case-study-helped .showcase-tabs {
+  margin-bottom: 0;
+}
+
 /* ---------- Process index number (home process tiles) ---------- */
 
 .process-index {
