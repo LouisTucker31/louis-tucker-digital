@@ -148,6 +148,10 @@ textarea:focus-visible {
   max-width: var(--measure);
 }
 
+.measure-wide {
+  max-width: 60%;
+}
+
 .measure h2 {
   margin-top: var(--space-3);
   margin-bottom: var(--space-3);
@@ -1640,6 +1644,10 @@ label.checkbox-option {
 /* ---------- Responsive ---------- */
 
 @media (max-width: 900px) {
+  .measure-wide {
+    max-width: 100%;
+  }
+
   .showcase-body {
     grid-template-columns: 1fr;
     gap: var(--space-4);
