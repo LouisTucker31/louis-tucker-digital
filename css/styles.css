@@ -571,6 +571,42 @@ textarea:focus-visible {
   margin-top: var(--space-6);
 }
 
+.case-study-overview {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  gap: var(--space-7);
+  margin-top: var(--space-8);
+}
+
+.case-study-overview h2 {
+  margin-bottom: var(--space-4);
+}
+
+.case-study-overview p {
+  color: var(--color-ink-soft);
+}
+
+.case-study-facts {
+  margin: 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+.case-study-fact {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.case-study-fact dt {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.case-study-fact dd {
+  margin: 0.2em 0 0;
+  color: var(--color-ink-soft);
+}
+
 /* ---------- Process index number (home process tiles) ---------- */
 
 .process-index {
@@ -1521,6 +1557,11 @@ label.checkbox-option {
   }
 
   .offer-split {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .case-study-overview {
     grid-template-columns: 1fr;
     gap: var(--space-5);
   }
