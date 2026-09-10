@@ -1012,6 +1012,7 @@ label.checkbox-option {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
