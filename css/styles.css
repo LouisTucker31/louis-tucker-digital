@@ -600,7 +600,7 @@ textarea:focus-visible {
 }
 
 .case-study-improvements {
-  margin-top: var(--space-8);
+  margin-top: var(--space-6);
   padding-top: var(--space-6);
   border-top: 1px solid var(--color-rule);
 }
