@@ -571,14 +571,18 @@ textarea:focus-visible {
   margin-top: var(--space-6);
 }
 
-.case-study-overview {
-  display: grid;
-  grid-template-columns: 3fr 7fr;
-  gap: var(--space-7);
+.case-study-section-head {
   margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
 }
 
-.case-study-overview h2 {
+.case-study-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+}
+
+.case-study-overview h3 {
   margin-bottom: var(--space-4);
 }
 
@@ -588,12 +592,15 @@ textarea:focus-visible {
 
 .case-study-facts {
   margin: 0;
-  border-top: 1px solid var(--color-rule);
 }
 
 .case-study-fact {
-  padding: var(--space-3) 0;
+  padding: var(--space-2) 0;
   border-bottom: 1px solid var(--color-rule);
+}
+
+.case-study-fact:first-child {
+  padding-top: 0;
 }
 
 .case-study-fact dt {
