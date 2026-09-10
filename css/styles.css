@@ -568,7 +568,7 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: var(--space-6);
+  margin-top: var(--space-8);
 }
 
 .case-study-image-grid {
@@ -605,7 +605,8 @@ textarea:focus-visible {
   border-top: 1px solid var(--color-rule);
 }
 
-.case-study-improvements h3 {
+.case-study-improvements h2 {
+  font-size: 1.35rem;
   margin-bottom: var(--space-4);
 }
 
@@ -656,15 +657,15 @@ textarea:focus-visible {
   display: grid;
   grid-template-columns: 35fr 65fr;
   gap: var(--space-8);
-  margin-top: var(--space-6);
+  margin-top: var(--space-8);
 }
 
-.case-study-overview h3 {
+.case-study-overview h2 {
   font-size: 1.6rem;
   margin-bottom: var(--space-4);
 }
 
-.case-study-overview h3:not(:first-child) {
+.case-study-overview h2:not(:first-child) {
   margin-top: var(--space-6);
 }
 
