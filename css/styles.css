@@ -609,6 +609,37 @@ textarea:focus-visible {
   margin-bottom: var(--space-4);
 }
 
+.case-study-results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.case-study-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.case-study-result-figure {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2.15rem, 3.6vw, 3rem);
+  color: var(--color-ink);
+}
+
+.case-study-result-label {
+  margin-top: var(--space-2);
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  color: var(--color-ink-soft);
+}
+
 .case-study-overview {
   display: grid;
   grid-template-columns: 35fr 65fr;
@@ -1626,6 +1657,11 @@ label.checkbox-option {
   .case-study-approach {
     grid-template-columns: 1fr;
     gap: var(--space-5);
+  }
+
+  .case-study-results {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
   }
 
   .footer-dark-grid {
