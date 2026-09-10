@@ -537,6 +537,10 @@ textarea:focus-visible {
   margin-bottom: var(--space-6);
 }
 
+.section-head-tight {
+  margin-bottom: var(--space-3);
+}
+
 .section-head-spaced {
   margin-top: var(--space-7);
 }
