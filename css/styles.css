@@ -148,6 +148,15 @@ textarea:focus-visible {
   max-width: var(--measure);
 }
 
+.measure h2 {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+
+.measure h2:first-child {
+  margin-top: 0;
+}
+
 .skip-link {
   position: absolute;
   left: -999px;
