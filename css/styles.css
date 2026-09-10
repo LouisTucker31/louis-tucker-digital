@@ -978,6 +978,8 @@ label.checkbox-option {
 }
 
 .showcase-tab {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-ui);
   font-weight: 600;
   font-size: 0.9rem;
@@ -987,6 +989,7 @@ label.checkbox-option {
   border-radius: 999px;
   padding: 0.65em 1.3em;
   cursor: pointer;
+  text-decoration: none;
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
