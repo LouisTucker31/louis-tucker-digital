@@ -571,20 +571,20 @@ textarea:focus-visible {
   margin-top: var(--space-6);
 }
 
-.case-study-section-head {
-  margin-top: var(--space-6);
-  margin-bottom: var(--space-4);
-}
-
 .case-study-overview {
   display: grid;
   grid-template-columns: 2fr 3fr;
   gap: var(--space-8);
+  margin-top: var(--space-6);
 }
 
 .case-study-overview h3 {
   font-size: 1.6rem;
   margin-bottom: var(--space-4);
+}
+
+.case-study-overview h3:not(:first-child) {
+  margin-top: var(--space-6);
 }
 
 .case-study-overview p {
