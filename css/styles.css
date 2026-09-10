@@ -607,11 +607,13 @@ textarea:focus-visible {
 .case-study-fact dt {
   font-family: var(--font-ui);
   font-weight: 600;
+  font-size: 1.1rem;
   color: var(--color-ink);
 }
 
 .case-study-fact dd {
   margin: 0.2em 0 0;
+  font-size: 1.1rem;
   color: var(--color-ink-soft);
 }
 
