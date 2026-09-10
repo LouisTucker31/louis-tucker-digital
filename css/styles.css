@@ -965,11 +965,8 @@ label.checkbox-option {
 
 /* ---------- Showcase tabs (service preview swap) ---------- */
 
-#showcase {
-  scroll-margin-top: calc(var(--header-height, 5.5rem) + 0.5rem);
-}
-
-#process-steps {
+#showcase-jump,
+#process-steps-jump {
   scroll-margin-top: var(--header-height, 5.5rem);
 }
 

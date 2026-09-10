@@ -268,36 +268,6 @@
     });
   }
 
-  function initShowcaseHashScroll() {
-    var hash = window.location.hash;
-
-    if (hash === "#showcase") {
-      var visual = document.querySelector("#showcase .showcase-visual, #showcase .showcase-visual-grid");
-      if (!visual) return;
-
-      window.requestAnimationFrame(function () {
-        var header = document.querySelector(".site-header");
-        var headerHeight = header ? header.getBoundingClientRect().height : 0;
-        var rect = visual.getBoundingClientRect();
-        var visibleHeight = window.innerHeight - headerHeight;
-        var targetY = rect.top + window.scrollY - headerHeight - (visibleHeight - rect.height) / 2 - 40;
-        window.scrollTo({ top: Math.max(targetY, 0), behavior: "auto" });
-      });
-      return;
-    }
-
-    if (hash === "#process-steps") {
-      var firstStep = document.querySelector("#process-steps .process-step");
-      if (!firstStep) return;
-
-      window.requestAnimationFrame(function () {
-        var rect = firstStep.getBoundingClientRect();
-        var targetY = rect.top + window.scrollY - (window.innerHeight - rect.height) / 2;
-        window.scrollTo({ top: Math.max(targetY, 0), behavior: "auto" });
-      });
-    }
-  }
-
   document.addEventListener("DOMContentLoaded", function () {
     initNav();
     initContactForm();
@@ -306,6 +276,5 @@
     initShowcase();
     initStickyHeader();
     initOfferCarousel();
-    initShowcaseHashScroll();
   });
 })();
