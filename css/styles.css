@@ -584,6 +584,31 @@ textarea:focus-visible {
   margin-top: 0;
 }
 
+.case-study-approach {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+}
+
+.case-study-approach h2 {
+  margin-bottom: var(--space-3);
+}
+
+.case-study-approach p {
+  color: var(--color-ink-soft);
+}
+
+.case-study-improvements {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-rule);
+}
+
+.case-study-improvements h3 {
+  margin-bottom: var(--space-4);
+}
+
 .case-study-overview {
   display: grid;
   grid-template-columns: 35fr 65fr;
@@ -604,7 +629,8 @@ textarea:focus-visible {
   color: var(--color-ink-soft);
 }
 
-.case-study-scope.showcase-tabs {
+.case-study-scope.showcase-tabs,
+.case-study-improvements .showcase-tabs {
   margin-bottom: 0;
 }
 
@@ -1595,6 +1621,11 @@ label.checkbox-option {
 
   .case-study-image-grid {
     grid-template-columns: 1fr;
+  }
+
+  .case-study-approach {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
   }
 
   .footer-dark-grid {
