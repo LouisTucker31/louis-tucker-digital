@@ -571,6 +571,19 @@ textarea:focus-visible {
   margin-top: var(--space-6);
 }
 
+.case-study-image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.case-study-placeholder-tile {
+  min-height: 0;
+  aspect-ratio: 3 / 2;
+  margin-top: 0;
+}
+
 .case-study-overview {
   display: grid;
   grid-template-columns: 35fr 65fr;
@@ -1591,6 +1604,10 @@ label.checkbox-option {
   .case-study-overview {
     grid-template-columns: 1fr;
     gap: var(--space-5);
+  }
+
+  .case-study-image-grid {
+    grid-template-columns: 1fr;
   }
 
   .footer-dark-grid {
