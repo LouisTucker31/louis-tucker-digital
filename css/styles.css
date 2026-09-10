@@ -560,6 +560,17 @@ textarea:focus-visible {
   margin-bottom: 0;
 }
 
+.case-study-placeholder {
+  min-height: 40rem;
+  border-radius: var(--radius-panel);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-6);
+}
+
 /* ---------- Process index number (home process tiles) ---------- */
 
 .process-index {
