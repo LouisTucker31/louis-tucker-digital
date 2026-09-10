@@ -1,0 +1,11 @@
+# Clean URLs are now native (each page lives at /<name>/index.html), so
+# no rewrite rules are required for normal navigation. These redirects
+# exist only to send old bookmarks/links at the previous /pages/*.html
+# URLs to their new home, and are read automatically by hosts that
+# support this file (e.g. Netlify). Safe to remove once nothing links
+# to the old paths anymore.
+
+/pages/services.html   /services/   301
+/pages/work.html       /work/       301
+/pages/contact.html    /contact/    301
+/pages/privacy.html    /privacy/    301
