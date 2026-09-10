@@ -1390,7 +1390,7 @@ label.checkbox-option {
 
 .footer-dark-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1.2fr 1fr;
+  grid-template-columns: 1.4fr 0.7fr 0.7fr 1fr;
   gap: var(--space-4);
   padding-bottom: var(--space-3);
   border-bottom: 1px solid var(--color-dark-rule);
@@ -1407,8 +1407,7 @@ label.checkbox-option {
 }
 
 .footer-dark-nav {
-  display: flex;
-  gap: var(--space-3);
+  display: contents;
 }
 
 .footer-dark-nav ul {
