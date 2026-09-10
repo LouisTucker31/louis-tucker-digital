@@ -641,6 +641,21 @@ textarea:focus-visible {
   color: var(--color-ink-soft);
 }
 
+.case-study-back {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  margin-bottom: var(--space-4);
+  transition: color 0.15s ease;
+}
+
+.case-study-back:hover {
+  color: var(--color-ink);
+}
+
 .case-study-cta {
   max-width: 36rem;
   margin: var(--space-8) auto 0;
