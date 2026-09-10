@@ -220,26 +220,6 @@ textarea:focus-visible {
   text-decoration: none;
 }
 
-.btn-secondary {
-  background: transparent;
-  color: var(--color-ink);
-  border-color: var(--color-rule-strong);
-}
-
-.btn-secondary:hover {
-  border-color: var(--color-ink);
-  text-decoration: none;
-}
-
-.btn-secondary-on-dark {
-  color: var(--color-on-dark);
-  border-color: var(--color-dark-rule);
-}
-
-.btn-secondary-on-dark:hover {
-  border-color: var(--color-on-dark-soft);
-}
-
 /* ---------- Header ---------- */
 
 .site-header {
@@ -459,7 +439,6 @@ textarea:focus-visible {
   max-width: none;
 }
 
-
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -525,10 +504,6 @@ textarea:focus-visible {
   color: rgba(242, 241, 238, 0.95);
 }
 
-.section-flush-top {
-  padding-top: 0;
-}
-
 .error-code {
   font-size: 2.6rem;
   margin-bottom: var(--space-2);
@@ -565,20 +540,7 @@ textarea:focus-visible {
   max-width: 48rem;
 }
 
-/* ---------- Process list (index / ledger style, not numbered circles) ---------- */
-
-.process-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-5);
-  border-top: 1px solid var(--color-rule);
-  padding-top: var(--space-5);
-}
-
-.process-item + .process-item {
-  border-left: 1px solid var(--color-rule);
-  padding-left: var(--space-5);
-}
+/* ---------- Process index number (home process tiles) ---------- */
 
 .process-index {
   display: block;
@@ -587,15 +549,6 @@ textarea:focus-visible {
   font-size: 1.8rem;
   color: var(--color-accent);
   margin-bottom: var(--space-2);
-}
-
-.process-item h3 {
-  margin-bottom: 0.4em;
-}
-
-.process-item p {
-  color: var(--color-ink-soft);
-  margin: 0;
 }
 
 /* ---------- Services preview (home) ---------- */
@@ -615,95 +568,6 @@ textarea:focus-visible {
 
 .service-preview-item h3 {
   font-size: 1.1rem;
-}
-
-.service-preview-item .service-note {
-  color: var(--color-ink-soft);
-  font-size: 0.95rem;
-  font-family: var(--font-body);
-}
-
-/* ---------- Services ledger (full page) ---------- */
-
-.service-ledger {
-  border-top: 1px solid var(--color-rule-strong);
-}
-
-.service-entry {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: var(--space-5);
-  padding: var(--space-6) 0;
-  border-bottom: 1px solid var(--color-rule);
-}
-
-.service-entry-title {
-  margin-bottom: var(--space-2);
-}
-
-.service-entry-from {
-  font-family: var(--font-ui);
-  font-weight: 600;
-  color: var(--color-ink-soft);
-  font-size: 0.95rem;
-}
-
-.service-entry-body p {
-  color: var(--color-ink-soft);
-  max-width: 42rem;
-}
-
-.service-entry-includes {
-  list-style: none;
-  margin: var(--space-3) 0 0;
-  padding: 0;
-}
-
-.service-entry-includes li {
-  padding-left: 1.3em;
-  position: relative;
-  margin-bottom: 0.5em;
-  color: var(--color-ink-soft);
-}
-
-.service-entry-includes li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.65em;
-  width: 6px;
-  height: 6px;
-  background: var(--color-accent);
-  border-radius: 50%;
-}
-
-/* ---------- CTA band ---------- */
-
-.cta-band {
-  padding: var(--space-6) 0;
-}
-
-.cta-band .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
-  flex-wrap: wrap;
-  background: var(--color-bg);
-  border: 1px solid var(--color-rule-strong);
-  border-radius: var(--radius-panel);
-  padding: var(--space-5) var(--space-5);
-}
-
-.cta-band h2 {
-  max-width: 26rem;
-  color: var(--color-ink);
-}
-
-.cta-band-actions {
-  display: flex;
-  gap: var(--space-3);
-  flex-wrap: wrap;
 }
 
 /* ---------- Contact page ---------- */
@@ -910,47 +774,6 @@ label.checkbox-option {
 
 /* ---------- Footer ---------- */
 
-.site-footer {
-  border-top: 1px solid var(--color-rule);
-  padding: var(--space-3) 0;
-  background: var(--color-bg);
-}
-
-.footer-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-2) var(--space-4);
-}
-
-.footer-copy {
-  margin: 0;
-  font-size: 0.85rem;
-  color: var(--color-ink-soft);
-}
-
-.footer-links {
-  margin: 0;
-  display: flex;
-  gap: var(--space-4);
-  font-size: 0.85rem;
-}
-
-.footer-links a {
-  color: var(--color-ink-soft);
-  text-decoration: none;
-  padding: 0.2em 0;
-}
-
-.footer-links a:hover {
-  color: var(--color-accent);
-}
-
-.section-tight {
-  padding-bottom: 0;
-}
-
 /* ---------- Tile sections (stacked, overlapping rounded panels) ---------- */
 
 .tile-section {
@@ -995,13 +818,11 @@ label.checkbox-option {
   padding-bottom: var(--space-7);
 }
 
-.tile-section-dark .section-head h2,
-.section-head-on-dark h2 {
+.tile-section-dark .section-head h2 {
   color: var(--color-on-dark);
 }
 
-.tile-section-dark .section-head p,
-.section-head-on-dark p {
+.tile-section-dark .section-head p {
   color: var(--color-on-dark-soft);
 }
 
@@ -1629,18 +1450,6 @@ label.checkbox-option {
   font-family: var(--font-ui);
 }
 
-.footer-tile {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-2) var(--space-4);
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-rule);
-  border-radius: var(--radius-panel);
-  padding: var(--space-3) var(--space-5);
-}
-
 /* ---------- Responsive ---------- */
 
 @media (max-width: 900px) {
@@ -1693,11 +1502,6 @@ label.checkbox-option {
     order: -1;
   }
 
-  .service-entry {
-    grid-template-columns: 1fr;
-    gap: var(--space-2);
-  }
-
   .hero,
   .hero-wrap-services .hero {
     min-height: 0;
@@ -1710,16 +1514,6 @@ label.checkbox-option {
 
   .hero-lede {
     max-width: none;
-  }
-
-  .process-list {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: var(--space-5);
-  }
-
-  .process-item:nth-child(odd) {
-    border-left: none;
-    padding-left: 0;
   }
 
   .process-tiles {
@@ -1790,30 +1584,7 @@ label.checkbox-option {
     grid-template-columns: 1fr;
   }
 
-  .process-list {
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
-  }
-
-  .process-item + .process-item {
-    border-left: none;
-    padding-left: 0;
-    border-top: 1px solid var(--color-rule);
-    padding-top: var(--space-4);
-  }
-
-  .cta-band .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .process-tiles {
     grid-template-columns: 1fr;
-  }
-
-  .footer-tile {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
   }
 }

@@ -17,10 +17,8 @@ natively on any static host, no rewrite rules or server config needed.
 | Privacy notice | `privacy/index.html` | `/privacy/` |
 | 404 | `404.html` | (served automatically by most hosts on any unmatched path) |
 
-An optional `_redirects` file is included for Netlify-style hosts, it
-301-redirects the old `/pages/*.html` paths (from before this folder
-restructure) to their new clean URLs, so any bookmarks or external links
-still work. It isn't required for the site to function.
+The site is currently deployed on GitHub Pages, which serves each
+folder's `index.html` for its clean URL natively, no config needed.
 
 ## Before this goes live
 
@@ -48,11 +46,11 @@ still work. It isn't required for the site to function.
   line. If you trade as a limited company, add that disclosure, either
   as a short line in the footer or on the privacy page, it isn't
   required for a sole trader.
-- **Privacy notice**: `privacy/index.html` is a starting template, not
-  legal advice. It's written to be accurate for the site as built (no
-  analytics or cookies beyond what's needed to run it, Formspree as the
-  only processor), but you should have the wording checked, add a real
-  date, and confirm the data-retention line before publishing.
+- **Privacy notice**: `privacy/index.html` covers who's responsible for
+  data, what's collected, lawful bases, B2B marketing contact, sharing
+  with processors, retention and cookies. It isn't legal advice, have it
+  checked before relying on it, and keep the "Last updated" date current
+  whenever the wording changes.
 - **Favicon and OG image**: `assets/favicon.svg` and `assets/og-image.png`
   are a simple "LT" monogram in your brand colours. Swap for a proper
   logo if you have one.
@@ -123,15 +121,16 @@ tag is ignored by browsers, that directive only takes effect when CSP
 is set as a real HTTP header. If your host lets you set response
 headers, moving the whole CSP there is stronger than the meta tag.
 
-Everything else (CSP, form handling, input sanitisation, honeypot spam
-field) is already handled in the markup and JS.
+The CSP also sets `object-src 'none'` as defence-in-depth against
+plugin-based content, even though `default-src 'self'` already covers
+it by fallback. Everything else (form handling, input sanitisation,
+honeypot spam field) is already handled in the markup and JS.
 
 ## Structure
 
 ```
 index.html
 404.html
-_redirects
 robots.txt
 sitemap.xml
 css/styles.css

@@ -20,7 +20,7 @@
 
     // Close the mobile menu if the viewport grows past the breakpoint
     // while it's open, so it doesn't stay stuck open on resize.
-    var mq = window.matchMedia("(min-width: 641px)");
+    var mq = window.matchMedia("(min-width: 901px)");
     mq.addEventListener("change", function (e) {
       if (e.matches) {
         nav.classList.remove("is-open");
