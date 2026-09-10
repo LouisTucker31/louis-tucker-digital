@@ -572,17 +572,18 @@ textarea:focus-visible {
 }
 
 .case-study-section-head {
-  margin-top: var(--space-8);
+  margin-top: var(--space-6);
   margin-bottom: var(--space-4);
 }
 
 .case-study-overview {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-7);
+  grid-template-columns: 2fr 3fr;
+  gap: var(--space-8);
 }
 
 .case-study-overview h3 {
+  font-size: 1.6rem;
   margin-bottom: var(--space-4);
 }
 
