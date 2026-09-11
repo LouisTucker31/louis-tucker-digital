@@ -22,13 +22,13 @@ folder's `index.html` for its clean URL natively, no config needed.
 
 ## Before this goes live
 
-- **Contact form**: `contact/index.html` posts to a Formspree placeholder
-  (`https://formspree.io/f/YOUR_FORM_ID`). Create a free Formspree form,
-  swap in your real endpoint, then send a real test enquiry and confirm
-  it reaches your inbox. If you use a different provider, update the
-  `form-action` and `connect-src` values in the `Content-Security-Policy`
-  meta tag on every page (`index.html`, `services/index.html`,
-  `work/index.html`, `contact/index.html`, `privacy/index.html`).
+- **Contact form**: `contact/index.html` posts to a live Formspree endpoint
+  (`https://formspree.io/f/mbgjwpvg`). Send a real test enquiry and confirm
+  it reaches your inbox before relying on it. If you ever switch providers,
+  update the `form-action` and `connect-src` values in the
+  `Content-Security-Policy` meta tag on every page (`index.html`,
+  `services/index.html`, `work/index.html`, `contact/index.html`,
+  `privacy/index.html`).
 - **Email address**: `louistucker@live.co.uk` is wired in across the
   footer, contact page, and mailto links. Update it everywhere if you
   switch to a different address later (a business-domain address once
