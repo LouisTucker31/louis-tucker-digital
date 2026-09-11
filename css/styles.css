@@ -656,13 +656,13 @@ textarea:focus-visible {
   color: var(--color-ink);
 }
 
-.case-study-cta {
+.cta-section {
   max-width: 36rem;
   margin: var(--space-8) auto 0;
   text-align: center;
 }
 
-.case-study-cta p {
+.cta-section p {
   color: var(--color-ink-soft);
   font-size: 1.1rem;
   margin: var(--space-3) 0 var(--space-5);
