@@ -845,6 +845,14 @@ select {
   padding-right: 2.2em;
 }
 
+select:has(option[value=""]:checked) {
+  color: var(--color-ink-faint);
+}
+
+select option {
+  color: var(--color-ink);
+}
+
 .field.has-error input,
 .field.has-error select,
 .field.has-error textarea {
