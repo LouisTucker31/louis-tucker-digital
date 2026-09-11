@@ -641,19 +641,28 @@ textarea:focus-visible {
   color: var(--color-ink-soft);
 }
 
-.case-study-back {
+.text-link-subtle {
   display: inline-block;
   font-family: var(--font-ui);
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--color-ink-soft);
   text-decoration: none;
-  margin-bottom: var(--space-4);
   transition: color 0.15s ease;
 }
 
-.case-study-back:hover {
+.text-link-subtle:hover {
   color: var(--color-ink);
+}
+
+.case-study-back {
+  margin-bottom: var(--space-4);
+}
+
+.view-all-work {
+  display: block;
+  margin-top: var(--space-5);
+  text-align: right;
 }
 
 .cta-section {
