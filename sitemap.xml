@@ -16,6 +16,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.louistuckerdigital.co.uk/case-studies/dorset-plumbing/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.louistuckerdigital.co.uk/case-studies/local-coffee-shop/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.louistuckerdigital.co.uk/contact/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
