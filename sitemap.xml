@@ -36,6 +36,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.louistuckerdigital.co.uk/case-studies/professional-services-content/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.louistuckerdigital.co.uk/contact/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
