@@ -588,6 +588,10 @@ textarea:focus-visible {
   object-position: center;
 }
 
+.case-study-placeholder-image-zoom {
+  transform: scale(1.35);
+}
+
 .case-study-image-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
