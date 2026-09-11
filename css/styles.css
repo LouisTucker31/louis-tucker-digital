@@ -11,6 +11,14 @@
   colour, so the accent reads as considered rather than shouted.
 */
 
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("../assets/fonts/archivo-variable.woff2") format("woff2");
+}
+
 :root {
   --color-bg: #ffffff;
   --color-bg-alt: #eef1f6;
