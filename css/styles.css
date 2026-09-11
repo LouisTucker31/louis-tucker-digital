@@ -595,7 +595,7 @@ textarea:focus-visible {
 }
 
 .case-study-placeholder-tile {
-  min-height: 0;
+  height: auto;
   aspect-ratio: 3 / 2;
   margin-top: 0;
 }
