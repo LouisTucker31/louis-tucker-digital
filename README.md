@@ -29,7 +29,7 @@ folder's `index.html` for its clean URL natively, no config needed.
   `Content-Security-Policy` meta tag on every page (`index.html`,
   `services/index.html`, `work/index.html`, `contact/index.html`,
   `privacy/index.html`).
-- **Email address**: `louistucker@live.co.uk` is wired in across the
+- **Email address**: `hello@louistuckerdigital.co.uk` is wired in across the
   footer, contact page, and mailto links. Update it everywhere if you
   switch to a different address later (a business-domain address once
   you have one is usually more credible than a personal one).
