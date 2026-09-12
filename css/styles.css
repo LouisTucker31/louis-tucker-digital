@@ -1274,6 +1274,10 @@ label.checkbox-option {
   transform: scale(0.85);
 }
 
+.showcase-visual-grid-featured .showcase-visual-image {
+  transform: scale(0.95);
+}
+
 .showcase-visual-overlay {
   position: absolute;
   inset: 0;
