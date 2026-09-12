@@ -135,6 +135,10 @@ img {
   display: block;
 }
 
+img[hidden] {
+  display: none;
+}
+
 /* Visible keyboard focus everywhere, including on custom controls. */
 a:focus-visible,
 button:focus-visible,
@@ -1258,11 +1262,30 @@ label.checkbox-option {
   box-shadow: 0 8px 16px -10px rgba(26, 34, 51, 0.35);
 }
 
+.showcase-visual.is-static {
+  cursor: default;
+}
+
+.showcase-visual.is-static:hover {
+  transform: none;
+  box-shadow: none;
+}
+
 .showcase-visual-label {
   font-family: var(--font-ui);
   font-weight: 600;
   color: var(--color-ink-soft);
   font-size: 1.3rem;
+}
+
+a.showcase-visual > .showcase-visual-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-3);
 }
 
 .showcase-visual-image {

@@ -226,6 +226,9 @@
     var detailPanels = showcase.querySelectorAll(".showcase-detail-panel");
     var visualGrid = showcase.querySelector(".showcase-visual-grid");
     var visualGroups = showcase.querySelectorAll(".showcase-visual-group");
+    var visualLink = visualGrid ? null : showcase.querySelector("a.showcase-visual");
+    var visualImage = visualLink ? visualLink.querySelector(".showcase-visual-image") : null;
+    var visualLabel = labels.length ? labels[0] : null;
 
     tabs.forEach(function (tab) {
       tab.addEventListener("click", function () {
@@ -250,6 +253,30 @@
             descs.forEach(function (descEl) {
               descEl.textContent = desc;
             });
+          }
+
+          if (visualImage) {
+            var image = tab.getAttribute("data-image");
+            if (image) {
+              visualImage.src = image;
+              visualImage.alt = tab.getAttribute("data-image-alt") || "";
+              visualImage.hidden = false;
+              if (visualLabel) visualLabel.hidden = true;
+            } else {
+              visualImage.hidden = true;
+              if (visualLabel) visualLabel.hidden = false;
+            }
+          }
+
+          if (visualLink) {
+            var caseStudyUrl = tab.getAttribute("data-case-study");
+            if (caseStudyUrl) {
+              visualLink.setAttribute("href", caseStudyUrl);
+              visualLink.classList.remove("is-static");
+            } else {
+              visualLink.removeAttribute("href");
+              visualLink.classList.add("is-static");
+            }
           }
         }
 
