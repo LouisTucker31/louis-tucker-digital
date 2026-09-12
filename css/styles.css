@@ -1306,7 +1306,7 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 }
 
 .showcase-detail ~ a.showcase-visual .showcase-visual-image {
-  transform: scale(0.95);
+  transform: scale(1.05);
 }
 
 .showcase-visual-overlay {
