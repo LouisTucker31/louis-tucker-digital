@@ -589,7 +589,11 @@ textarea:focus-visible {
 }
 
 .case-study-placeholder-image-zoom {
-  transform: scale(1.35);
+  transform: scale(1.25);
+}
+
+.case-study-placeholder-image-zoom-out {
+  transform: scale(0.85);
 }
 
 .case-study-image-grid {
@@ -608,6 +612,7 @@ textarea:focus-visible {
 .case-study-placeholder-tile .case-study-placeholder-image {
   object-fit: cover;
   object-position: top;
+  transform: scale(1.08);
 }
 
 .case-study-approach {
@@ -1258,6 +1263,15 @@ label.checkbox-option {
   font-weight: 600;
   color: var(--color-ink-soft);
   font-size: 1.3rem;
+}
+
+.showcase-visual-image {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  transform: scale(0.85);
 }
 
 .showcase-visual-overlay {
