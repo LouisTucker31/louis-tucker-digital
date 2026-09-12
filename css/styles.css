@@ -1288,6 +1288,10 @@ a.showcase-visual > .showcase-visual-label {
   padding: var(--space-3);
 }
 
+a.showcase-visual > .showcase-visual-label[hidden] {
+  display: none;
+}
+
 .showcase-visual-image {
   width: auto;
   height: 100%;
@@ -1298,6 +1302,10 @@ a.showcase-visual > .showcase-visual-label {
 }
 
 .showcase-visual-grid-featured .showcase-visual-image {
+  transform: scale(0.95);
+}
+
+.showcase-detail ~ a.showcase-visual .showcase-visual-image {
   transform: scale(0.95);
 }
 

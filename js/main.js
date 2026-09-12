@@ -245,15 +245,17 @@
           labels.forEach(function (label) {
             label.textContent = tab.textContent;
           });
+
+          var caseTitle = tab.getAttribute("data-case-title");
           titles.forEach(function (title) {
-            title.textContent = tab.textContent;
+            title.textContent = caseTitle || tab.textContent;
           });
+
           var desc = tab.getAttribute("data-desc");
-          if (desc) {
-            descs.forEach(function (descEl) {
-              descEl.textContent = desc;
-            });
-          }
+          var caseDesc = tab.getAttribute("data-case-desc");
+          descs.forEach(function (descEl) {
+            descEl.textContent = caseDesc || desc || "";
+          });
 
           if (visualImage) {
             var image = tab.getAttribute("data-image");
