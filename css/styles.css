@@ -1751,6 +1751,18 @@ a.showcase-visual > .showcase-visual-label[hidden] {
     max-width: 100%;
   }
 
+  .section-head-tight {
+    margin-bottom: var(--space-3);
+  }
+
+  .measure h2 {
+    margin-top: var(--space-5);
+  }
+
+  .section:has(.measure-wide) {
+    padding-bottom: var(--space-5);
+  }
+
   .showcase-tabs[role="tablist"] {
     flex-wrap: nowrap;
     overflow-x: auto;
