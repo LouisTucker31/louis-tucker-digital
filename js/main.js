@@ -282,6 +282,10 @@
             }
           }
 
+          if (visualImage) {
+            visualImage.classList.toggle("is-hosting", !tab.getAttribute("data-case-study"));
+          }
+
           if (visualLink) {
             var caseStudyUrl = tab.getAttribute("data-case-study");
             if (caseStudyUrl) {
