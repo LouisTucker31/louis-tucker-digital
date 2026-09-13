@@ -1742,11 +1742,11 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 
 @media (max-width: 900px) {
   .hero {
-    padding-top: calc(var(--header-height, 5.5rem) + var(--space-6) + var(--space-3));
+    padding-top: calc(var(--header-height, 5.5rem) + var(--space-6) + (var(--space-3) * 0.75));
   }
 
   .hero-wrap-services .hero {
-    padding-top: calc(var(--header-height, 5.5rem) + var(--space-6) + var(--space-5) + var(--space-3));
+    padding-top: calc(var(--header-height, 5.5rem) + var(--space-6) + var(--space-5) + (var(--space-3) * 0.75));
   }
 
   .measure-wide {
