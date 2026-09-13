@@ -1816,23 +1816,29 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 
   .case-study-image-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-3);
     margin-top: var(--space-4);
   }
 
   .case-study-approach {
     grid-template-columns: 1fr;
     gap: var(--space-2);
-    margin-top: var(--space-4);
+    margin-top: var(--space-5);
   }
 
   .case-study-results {
     grid-template-columns: 1fr;
     gap: var(--space-4);
     margin-top: var(--space-4);
+    padding: var(--space-5) 0;
+  }
+
+  .case-study-result-label {
+    margin-top: 0.35rem;
   }
 
   .case-study-related {
-    margin-top: var(--space-6);
+    margin-top: var(--space-5);
   }
 
   .footer-dark-grid {
@@ -1990,6 +1996,10 @@ a.showcase-visual > .showcase-visual-label[hidden] {
     aspect-ratio: 3 / 2;
     height: auto;
     margin-top: var(--space-4);
+  }
+
+  .case-study-placeholder-image-zoom-out {
+    transform: scale(1);
   }
 
   .view-all-work {
