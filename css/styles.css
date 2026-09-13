@@ -1841,6 +1841,10 @@ a.showcase-visual > .showcase-visual-label[hidden] {
     padding-right: var(--space-4);
   }
 
+  :root {
+    --header-height: 7rem;
+  }
+
   .site-header .container {
     display: flex;
     flex-wrap: wrap;
