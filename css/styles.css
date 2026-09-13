@@ -1945,6 +1945,15 @@ a.showcase-visual > .showcase-visual-label[hidden] {
     margin-top: var(--space-6);
   }
 
+  #showcase-jump.tile-section-last .section-head {
+    margin-bottom: var(--space-4);
+  }
+
+  .showcase-visual-grid:not(.showcase-visual-grid-featured) .showcase-visual-group:not(:first-child) .showcase-visual-image,
+  .showcase-visual-grid:not(.showcase-visual-grid-featured) .showcase-visual-group:first-child a:not(:first-child) .showcase-visual-image {
+    transform: scale(0.95);
+  }
+
   #showcase-jump:not(.tile-section-last) .container {
     padding-bottom: var(--space-6);
   }
