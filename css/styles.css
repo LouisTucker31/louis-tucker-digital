@@ -1743,6 +1743,7 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 @media (max-width: 900px) {
   .hero {
     padding-top: calc(var(--header-height, 5.5rem) + var(--space-6) + (var(--space-3) * 0.75));
+    padding-bottom: var(--space-5);
   }
 
   .hero-wrap-services .hero {
@@ -1904,6 +1905,14 @@ a.showcase-visual > .showcase-visual-label[hidden] {
     background: linear-gradient(160deg, #131c30 0%, var(--color-dark) 45%, var(--color-dark) 100%);
     border-radius: var(--radius);
     padding: var(--space-2) var(--space-3) var(--space-3);
+  }
+
+  .cta-section p {
+    margin: var(--space-3) 0;
+  }
+
+  .section-head {
+    margin-bottom: var(--space-5);
   }
 
 }
