@@ -1869,12 +1869,12 @@ a.showcase-visual > .showcase-visual-label[hidden] {
   }
 
   .header-contact-btn {
-    justify-self: auto;
-    margin-left: auto;
+    display: none;
   }
 
   .nav-toggle {
     display: block;
+    margin-left: auto;
   }
 
   .main-nav-on-dark.is-open {
