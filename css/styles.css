@@ -1919,7 +1919,7 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 
 @media (max-width: 640px) {
   .tile-section .container {
-    padding: var(--space-4) var(--space-3);
+    padding: var(--space-5) var(--space-3) var(--space-4);
   }
 
   .section-offwhite .container {
