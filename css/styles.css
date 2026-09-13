@@ -1757,6 +1757,7 @@ a.showcase-visual > .showcase-visual-label[hidden] {
     overflow-y: visible;
     scrollbar-width: none;
     padding-bottom: 2px;
+    margin-bottom: var(--space-4);
   }
 
   .showcase-tabs[role="tablist"]::-webkit-scrollbar {
@@ -1948,8 +1949,16 @@ a.showcase-visual > .showcase-visual-label[hidden] {
     padding-bottom: var(--space-6);
   }
 
+  #process-steps-jump .section-head {
+    margin-bottom: var(--space-3);
+  }
+
   .process-steps {
-    margin-top: var(--space-3);
+    margin-top: 0;
+  }
+
+  .process-steps .process-step:first-child {
+    padding-top: var(--space-3);
   }
 
   .view-all-work {
