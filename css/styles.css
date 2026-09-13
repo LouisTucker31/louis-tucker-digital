@@ -1844,6 +1844,8 @@ a.showcase-visual > .showcase-visual-label[hidden] {
   .site-header .container {
     display: flex;
     flex-wrap: wrap;
+    padding-top: var(--space-3);
+    padding-bottom: var(--space-3);
   }
 
   .main-nav {
