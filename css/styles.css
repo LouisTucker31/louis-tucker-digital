@@ -1743,7 +1743,7 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 @media (max-width: 900px) {
   .hero {
     padding-top: calc(var(--header-height, 5.5rem) + var(--space-6) + (var(--space-3) * 0.75));
-    padding-bottom: var(--space-5);
+    padding-bottom: var(--space-4);
   }
 
   .hero-wrap-services .hero {
@@ -1915,11 +1915,27 @@ a.showcase-visual > .showcase-visual-label[hidden] {
     margin-bottom: var(--space-5);
   }
 
+  .section-head-spaced {
+    margin-top: var(--space-5);
+  }
+
+  .view-all-work {
+    margin-top: var(--space-3);
+  }
+
+  .tile-section-dark .container {
+    padding-bottom: var(--space-6);
+  }
+
 }
 
 @media (max-width: 640px) {
   .tile-section .container {
     padding: var(--space-5) var(--space-3) var(--space-4);
+  }
+
+  .tile-section-dark .container {
+    padding-bottom: var(--space-6);
   }
 
   .section-offwhite .container {
