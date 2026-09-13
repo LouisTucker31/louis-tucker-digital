@@ -14,8 +14,8 @@
     var header = document.querySelector(".site-header-on-dark");
     if (!toggle || !nav) return;
 
-    toggle.addEventListener("click", function () {
-      var isOpen = nav.classList.toggle("is-open");
+    function setOpen(isOpen) {
+      nav.classList.toggle("is-open", isOpen);
       toggle.setAttribute("aria-expanded", String(isOpen));
 
       if (header) {
@@ -25,6 +25,17 @@
           header.classList.toggle("is-scrolled", window.scrollY > 40);
         }
       }
+    }
+
+    toggle.addEventListener("click", function () {
+      setOpen(!nav.classList.contains("is-open"));
+    });
+
+    // Close the menu when clicking anywhere outside it (or the toggle).
+    document.addEventListener("click", function (e) {
+      if (!nav.classList.contains("is-open")) return;
+      if (nav.contains(e.target) || toggle.contains(e.target)) return;
+      setOpen(false);
     });
 
     // Close the mobile menu if the viewport grows past the breakpoint
@@ -32,11 +43,7 @@
     var mq = window.matchMedia("(min-width: 901px)");
     mq.addEventListener("change", function (e) {
       if (e.matches) {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        if (header) {
-          header.classList.toggle("is-scrolled", window.scrollY > 40);
-        }
+        setOpen(false);
       }
     });
   }
