@@ -1751,10 +1751,6 @@ a.showcase-visual > .showcase-visual-label[hidden] {
     max-width: 100%;
   }
 
-  .section-head-tight {
-    margin-bottom: var(--space-3);
-  }
-
   .measure h2 {
     margin-top: var(--space-5);
   }
@@ -1967,6 +1963,10 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 
   .section-head {
     margin-bottom: var(--space-5);
+  }
+
+  .section-head-tight {
+    margin-bottom: var(--space-3);
   }
 
   .section-head-spaced {
