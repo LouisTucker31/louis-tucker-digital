@@ -1806,11 +1806,27 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 
   .footer-dark-grid {
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-4);
+    column-gap: var(--space-4);
+    row-gap: var(--space-3);
   }
 
   .footer-dark-brand,
   .footer-dark-contact {
+    grid-column: 1 / -1;
+  }
+
+  .footer-dark-location {
+    margin-top: 0.25rem;
+  }
+
+  .footer-dark-contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--space-4);
+    row-gap: var(--space-2);
+  }
+
+  .footer-dark-contact a:last-child {
     grid-column: 1 / -1;
   }
 
