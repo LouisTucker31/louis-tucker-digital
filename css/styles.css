@@ -1741,13 +1741,10 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 /* ---------- Responsive ---------- */
 
 @media (max-width: 900px) {
-  .hero {
-    padding-top: calc(var(--header-height, 5.5rem) + var(--space-6) + (var(--space-3) * 0.75));
-    padding-bottom: var(--space-4);
-  }
-
+  .hero,
   .hero-wrap-services .hero {
     padding-top: calc(var(--header-height, 5.5rem) + var(--space-6) + var(--space-5) + (var(--space-3) * 0.75));
+    padding-bottom: var(--space-6);
   }
 
   .measure-wide {
@@ -1920,7 +1917,7 @@ a.showcase-visual > .showcase-visual-label[hidden] {
   }
 
   .view-all-work {
-    margin-top: var(--space-3);
+    margin-top: var(--space-4);
   }
 
   .tile-section-dark .container {
