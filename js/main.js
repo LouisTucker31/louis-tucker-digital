@@ -11,11 +11,20 @@
   function initNav() {
     var toggle = document.querySelector(".nav-toggle");
     var nav = document.getElementById("main-nav");
+    var header = document.querySelector(".site-header-on-dark");
     if (!toggle || !nav) return;
 
     toggle.addEventListener("click", function () {
       var isOpen = nav.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", String(isOpen));
+
+      if (header) {
+        if (isOpen) {
+          header.classList.add("is-scrolled");
+        } else {
+          header.classList.toggle("is-scrolled", window.scrollY > 40);
+        }
+      }
     });
 
     // Close the mobile menu if the viewport grows past the breakpoint
@@ -25,6 +34,9 @@
       if (e.matches) {
         nav.classList.remove("is-open");
         toggle.setAttribute("aria-expanded", "false");
+        if (header) {
+          header.classList.toggle("is-scrolled", window.scrollY > 40);
+        }
       }
     });
   }
