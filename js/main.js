@@ -46,6 +46,17 @@
         setOpen(false);
       }
     });
+
+    // Close the menu as soon as the page behind it starts scrolling.
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (nav.classList.contains("is-open")) {
+          setOpen(false);
+        }
+      },
+      { passive: true }
+    );
   }
 
   function initContactForm() {
