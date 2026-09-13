@@ -1874,6 +1874,7 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-5);
   }
 
   .contact-grid .contact-info {
@@ -2009,6 +2010,18 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 
   .section-offwhite .section:has(.case-study-back) {
     padding-top: var(--space-3);
+  }
+
+  .section:has(.contact-grid) {
+    padding-bottom: var(--space-5);
+  }
+
+  .contact-info-block + .contact-info-block {
+    margin-top: var(--space-3);
+  }
+
+  .contact-grid form {
+    gap: var(--space-2);
   }
 
   .case-study-placeholder-image-zoom-out {
