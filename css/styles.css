@@ -1784,6 +1784,7 @@ a.showcase-visual > .showcase-visual-label[hidden] {
   }
 
   .offer-carousel-spacer {
+    scroll-snap-align: none;
     width: calc((100vw - 84vw) / 2);
   }
 
