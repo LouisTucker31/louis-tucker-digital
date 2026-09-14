@@ -34,13 +34,12 @@ folder's `index.html` for its clean URL natively, no config needed.
   switch to a different address later (a business-domain address once
   you have one is usually more credible than a personal one).
 - **Domain**: canonical links, Open Graph URLs, `robots.txt`, and
-  `sitemap.xml` all use `https://www.louistuckerdigital.co.uk/` as a
-  placeholder. Update these once you know your real domain, including
-  the URLs pointing at `assets/og-image.png` (the image itself doesn't
-  need to change, just the URLs referencing it).
-- **Prices**: the figures on the homepage and services page (from £900,
-  £1,600, £60/month, £350) are placeholders. Replace with your actual
-  pricing before publishing.
+  `sitemap.xml` all use the real domain, `https://www.louistuckerdigital.co.uk/`.
+  A `CNAME` file at the repo root sets this as the GitHub Pages custom
+  domain; confirm it's also set under the repo's Settings → Pages, and
+  that DNS at your registrar points to GitHub Pages.
+- **Prices**: the figures on the homepage and services page (from £35
+  to £500) are real pricing, already live.
 - **Company details**: the footer is intentionally minimal (copyright,
   privacy link, email) and doesn't carry a company registration/VAT
   line. If you trade as a limited company, add that disclosure, either
@@ -58,10 +57,12 @@ folder's `index.html` for its clean URL natively, no config needed.
 ## Cookie and tracker audit
 
 Completed as part of this build: the site includes no analytics, no
-advertising trackers, and sets no cookies of its own. The only external
-requests are the Google Fonts stylesheet and, on the contact page, the
-Formspree submission endpoint. No cookie consent banner is required as
-the site stands. If you add analytics later, this will need revisiting.
+advertising trackers, and sets no cookies of its own. Archivo is
+self-hosted (`assets/fonts/archivo-variable.woff2`), so there's no
+Google Fonts request; the only external request is, on the contact
+page, the Formspree submission endpoint. No cookie consent banner is
+required as the site stands. If you add analytics later, this will
+need revisiting.
 
 ## Accessibility and QA already handled in the build
 
@@ -131,6 +132,7 @@ honeypot spam field) is already handled in the markup and JS.
 ```
 index.html
 404.html
+CNAME
 robots.txt
 sitemap.xml
 css/styles.css
