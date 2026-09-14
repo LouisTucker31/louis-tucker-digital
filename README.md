@@ -110,22 +110,38 @@ they're flagged here rather than done in this build:
 
 ## Server headers
 
-Two security headers can't be set from HTML and should be added at the
-hosting/server level if your host supports custom headers:
+Confirmed live with `curl -I` against the production domain: GitHub
+Pages sends none of the following, and there's no config file or
+dashboard setting on GitHub Pages that adds them, custom response
+headers aren't supported on this host at all.
 
-- `X-Content-Type-Options: nosniff`
-- `Referrer-Policy: strict-origin-when-cross-origin` (a matching
-  `<meta name="referrer">` is already in the HTML as a fallback)
+- `Strict-Transport-Security` - missing. HTTPS itself works (HTTP
+  redirects to HTTPS correctly), but there's no HSTS header telling
+  browsers to always require it.
+- `X-Content-Type-Options: nosniff` - missing.
+- `Permissions-Policy` - missing.
+- `Referrer-Policy: strict-origin-when-cross-origin` - not sent as a
+  header. A matching `<meta name="referrer">` is in the HTML as a
+  fallback, which works but is weaker than the real header.
+- The CSP `frame-ancestors 'none'` directive - present in the HTML
+  `<meta>` tag, but browsers ignore `frame-ancestors` entirely unless
+  CSP is set as a real HTTP header, so there is currently no working
+  clickjacking protection despite the code showing this directive.
 
-Note also that the `frame-ancestors` directive inside the CSP `<meta>`
-tag is ignored by browsers, that directive only takes effect when CSP
-is set as a real HTTP header. If your host lets you set response
-headers, moving the whole CSP there is stronger than the meta tag.
+None of this is fixable from within this repo. The only way to get
+real response headers while keeping GitHub Pages for hosting is to
+put a layer in front of it, Cloudflare (free tier, using a Worker or
+a Transform Rule to inject headers) is the standard option, pointing
+the domain's DNS through Cloudflare instead of directly at GitHub.
 
-The CSP also sets `object-src 'none'` as defence-in-depth against
-plugin-based content, even though `default-src 'self'` already covers
-it by fallback. Everything else (form handling, input sanitisation,
-honeypot spam field) is already handled in the markup and JS.
+The CSP `<meta>` tag itself is otherwise sound: verified live against
+the deployed site with no unexpected external requests, the only
+external connection anywhere in the site is to `formspree.io` on the
+contact page, already correctly allowed. It also sets `object-src
+'none'` as defence-in-depth against plugin-based content, even though
+`default-src 'self'` already covers it by fallback. Everything else
+(form handling, input sanitisation, honeypot spam field) is already
+handled in the markup and JS.
 
 ## Structure
 
