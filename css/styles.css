@@ -1478,9 +1478,13 @@ a.showcase-visual > .showcase-visual-label[hidden] {
   margin-bottom: var(--space-2);
 }
 
-.showcase-detail-panel h3 {
+.showcase-detail-panel h2 {
   font-size: 1.6rem;
   margin-bottom: var(--space-3);
+}
+
+.showcase-visual-title {
+  font-size: 1.35rem;
 }
 
 .showcase-detail-panel p {
