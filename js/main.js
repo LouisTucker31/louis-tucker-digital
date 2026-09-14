@@ -65,6 +65,7 @@
 
     var statusBox = document.getElementById("form-status");
     var submitBtn = form.querySelector('button[type="submit"]');
+    var submitBtnDefaultText = submitBtn ? submitBtn.textContent : "";
 
     var requiredFields = ["name", "email", "message"];
 
@@ -72,6 +73,7 @@
       statusBox.textContent = message;
       statusBox.className = "form-status is-visible is-" + kind;
       statusBox.setAttribute("role", kind === "error" ? "alert" : "status");
+      statusBox.scrollIntoView({ behavior: "smooth", block: "center" });
     }
 
     function clearFieldError(field) {
@@ -164,7 +166,7 @@
         })
         .finally(function () {
           submitBtn.disabled = false;
-          submitBtn.textContent = "Send message";
+          submitBtn.textContent = submitBtnDefaultText;
         });
     });
   }
