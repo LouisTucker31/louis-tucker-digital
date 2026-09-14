@@ -219,7 +219,11 @@ textarea:focus-visible {
   border: 1px solid transparent;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.12s ease-out;
+}
+
+.btn:active {
+  transform: scale(0.97);
 }
 
 .btn-primary {
@@ -355,7 +359,11 @@ textarea:focus-visible {
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
-  transition: background-color 0.15s ease;
+  transition: background-color 0.15s ease, transform 0.12s ease-out;
+}
+
+.header-contact-btn:active {
+  transform: scale(0.97);
 }
 
 .header-contact-btn:hover {
@@ -974,6 +982,32 @@ label.checkbox-option {
 
 .form-status.is-visible {
   display: block;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+
+  @starting-style {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-status.is-visible {
+    transform: none;
+
+    @starting-style {
+      transform: none;
+    }
+  }
+
+  .main-nav.is-open {
+    transform: none;
+
+    @starting-style {
+      transform: none;
+    }
+  }
 }
 
 .form-status.is-success {
@@ -1228,13 +1262,17 @@ label.checkbox-option {
   padding: 0.65em 1.3em;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.12s ease-out;
 }
 
 .showcase-tab:hover {
   background: var(--color-accent);
   color: #ffffff;
   border-color: var(--color-accent);
+}
+
+.showcase-tab:active {
+  transform: scale(0.97);
 }
 
 .showcase-tab.is-active {
@@ -1545,6 +1583,7 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 
 .accordion {
   border-top: 1px solid var(--color-dark-rule);
+  padding-top: var(--space-2);
 }
 
 .accordion-item {
@@ -1559,7 +1598,7 @@ a.showcase-visual > .showcase-visual-label[hidden] {
   background: none;
   border: none;
   cursor: pointer;
-  padding: var(--space-4) 0;
+  padding: var(--space-4) var(--space-2);
   font-family: var(--font-ui);
   color: var(--color-on-dark);
   text-align: left;
@@ -1603,7 +1642,7 @@ a.showcase-visual > .showcase-visual-label[hidden] {
   color: var(--color-on-dark-soft);
   max-width: 42rem;
   margin: 0;
-  padding-bottom: 0;
+  padding: 0 var(--space-2);
 }
 
 .accordion-panel > p {
@@ -1937,6 +1976,14 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 
   .main-nav.is-open {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+
+    @starting-style {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
   }
 
   .main-nav ul {
