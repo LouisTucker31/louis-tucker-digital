@@ -165,7 +165,7 @@ textarea:focus-visible {
 }
 
 .measure h2 {
-  margin-top: var(--space-3);
+  margin-top: var(--space-5);
   margin-bottom: var(--space-3);
 }
 
@@ -313,6 +313,12 @@ textarea:focus-visible {
   gap: var(--space-5);
   margin: 0;
   padding: 0;
+}
+
+@media (min-width: 901px) {
+  .main-nav ul li:last-child {
+    display: none;
+  }
 }
 
 .main-nav a {
@@ -550,6 +556,10 @@ textarea:focus-visible {
   margin-bottom: var(--space-6);
 }
 
+#showcase-jump .section-head {
+  margin-bottom: var(--space-4);
+}
+
 .section-head-tight {
   margin-bottom: var(--space-3);
 }
@@ -568,6 +578,12 @@ textarea:focus-visible {
   color: var(--color-ink-soft);
   font-size: 1.1rem;
   max-width: 48rem;
+}
+
+@media (min-width: 901px) {
+  .section-head:has(.case-study-helped) {
+    margin-bottom: var(--space-4);
+  }
 }
 
 .case-study-helped {
@@ -715,12 +731,12 @@ textarea:focus-visible {
 
 .case-study-related {
   display: block;
-  margin-top: var(--space-8);
+  margin-top: var(--space-5);
 }
 
 .cta-section {
   max-width: 36rem;
-  margin: var(--space-6) auto 0;
+  margin: var(--space-7) auto 0;
   text-align: center;
 }
 
@@ -1581,7 +1597,6 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 
 .accordion {
   border-top: 1px solid var(--color-dark-rule);
-  padding-top: var(--space-2);
 }
 
 .accordion-item {
@@ -2024,6 +2039,10 @@ a.showcase-visual > .showcase-visual-label[hidden] {
     background: linear-gradient(160deg, #131c30 0%, var(--color-dark) 45%, var(--color-dark) 100%);
     border-radius: var(--radius);
     padding: var(--space-2) var(--space-3) var(--space-3);
+  }
+
+  .cta-section {
+    margin-top: var(--space-6);
   }
 
   .cta-section p {
