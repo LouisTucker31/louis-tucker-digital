@@ -34,7 +34,7 @@ folder's `index.html` for its clean URL natively, no config needed.
   switch to a different address later (a business-domain address once
   you have one is usually more credible than a personal one).
 - **Domain**: canonical links, Open Graph URLs, `robots.txt`, and
-  `sitemap.xml` all use the real domain, `https://www.louistuckerdigital.co.uk/`.
+  `sitemap.xml` all use the real domain, `https://louistuckerdigital.co.uk/`.
   A `CNAME` file at the repo root sets this as the GitHub Pages custom
   domain; confirm it's also set under the repo's Settings → Pages, and
   that DNS at your registrar points to GitHub Pages.
