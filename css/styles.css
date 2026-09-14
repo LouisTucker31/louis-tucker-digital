@@ -1784,7 +1784,7 @@ a.showcase-visual > .showcase-visual-label[hidden] {
   }
 
   .offer-carousel-spacer {
-    width: var(--space-2);
+    width: calc((100vw - 84vw) / 2);
   }
 
   .offer-card {
