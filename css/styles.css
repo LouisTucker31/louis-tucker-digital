@@ -1783,6 +1783,10 @@ a.showcase-visual > .showcase-visual-label[hidden] {
     padding-bottom: var(--space-6);
   }
 
+  .offer-carousel-spacer {
+    width: calc((100vw - 84vw) / 2);
+  }
+
   .offer-card {
     width: 84vw;
     max-width: 24rem;
