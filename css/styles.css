@@ -1783,6 +1783,20 @@ a.showcase-visual > .showcase-visual-label[hidden] {
     padding-bottom: var(--space-6);
   }
 
+  .offer-card {
+    width: 84vw;
+    max-width: 24rem;
+    padding: var(--space-4);
+  }
+
+  .offer-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .offer-card p {
+    font-size: 1rem;
+  }
+
   .measure-wide {
     max-width: 100%;
   }
