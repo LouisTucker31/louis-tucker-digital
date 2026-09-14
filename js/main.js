@@ -260,73 +260,103 @@
     var visualImage = visualLink ? visualLink.querySelector(".showcase-visual-image") : null;
     var visualLabel = labels.length ? labels[0] : null;
 
+    function activateTab(tab) {
+      var target = tab.getAttribute("data-panel");
+
+      tabs.forEach(function (t) {
+        t.classList.remove("is-active");
+        t.setAttribute("aria-selected", "false");
+        t.setAttribute("tabindex", "-1");
+      });
+      tab.classList.add("is-active");
+      tab.setAttribute("aria-selected", "true");
+      tab.setAttribute("tabindex", "0");
+
+      if (target !== "all") {
+        labels.forEach(function (label) {
+          label.textContent = tab.textContent;
+        });
+
+        var caseTitle = tab.getAttribute("data-case-title");
+        titles.forEach(function (title) {
+          title.textContent = caseTitle || tab.textContent;
+        });
+
+        var desc = tab.getAttribute("data-desc");
+        var caseDesc = tab.getAttribute("data-case-desc");
+        descs.forEach(function (descEl) {
+          descEl.textContent = caseDesc || desc || "";
+        });
+
+        if (visualImage) {
+          var image = tab.getAttribute("data-image");
+          if (image) {
+            visualImage.src = image;
+            visualImage.alt = tab.getAttribute("data-image-alt") || "";
+            visualImage.hidden = false;
+            if (visualLabel) visualLabel.hidden = true;
+          } else {
+            visualImage.hidden = true;
+            if (visualLabel) visualLabel.hidden = false;
+          }
+        }
+
+        if (visualImage) {
+          visualImage.classList.toggle("is-hosting", !tab.getAttribute("data-case-study"));
+        }
+
+        if (visualLink) {
+          var caseStudyUrl = tab.getAttribute("data-case-study");
+          if (caseStudyUrl) {
+            visualLink.setAttribute("href", caseStudyUrl);
+            visualLink.classList.remove("is-static");
+          } else {
+            visualLink.removeAttribute("href");
+            visualLink.classList.add("is-static");
+          }
+        }
+      }
+
+      detailPanels.forEach(function (panel) {
+        panel.classList.toggle("is-active", panel.getAttribute("data-detail") === target);
+      });
+
+      if (visualGrid) {
+        visualGrid.classList.toggle("is-all", target === "all");
+      }
+
+      visualGroups.forEach(function (group) {
+        group.classList.toggle("is-active", group.getAttribute("data-detail") === target);
+      });
+    }
+
     tabs.forEach(function (tab) {
+      tab.setAttribute("tabindex", tab.classList.contains("is-active") ? "0" : "-1");
+
       tab.addEventListener("click", function () {
-        var target = tab.getAttribute("data-panel");
+        activateTab(tab);
+      });
 
-        tabs.forEach(function (t) {
-          t.classList.remove("is-active");
-          t.setAttribute("aria-selected", "false");
-        });
-        tab.classList.add("is-active");
-        tab.setAttribute("aria-selected", "true");
+      tab.addEventListener("keydown", function (event) {
+        var currentIndex = Array.prototype.indexOf.call(tabs, tab);
+        var newIndex = null;
 
-        if (target !== "all") {
-          labels.forEach(function (label) {
-            label.textContent = tab.textContent;
-          });
-
-          var caseTitle = tab.getAttribute("data-case-title");
-          titles.forEach(function (title) {
-            title.textContent = caseTitle || tab.textContent;
-          });
-
-          var desc = tab.getAttribute("data-desc");
-          var caseDesc = tab.getAttribute("data-case-desc");
-          descs.forEach(function (descEl) {
-            descEl.textContent = caseDesc || desc || "";
-          });
-
-          if (visualImage) {
-            var image = tab.getAttribute("data-image");
-            if (image) {
-              visualImage.src = image;
-              visualImage.alt = tab.getAttribute("data-image-alt") || "";
-              visualImage.hidden = false;
-              if (visualLabel) visualLabel.hidden = true;
-            } else {
-              visualImage.hidden = true;
-              if (visualLabel) visualLabel.hidden = false;
-            }
-          }
-
-          if (visualImage) {
-            visualImage.classList.toggle("is-hosting", !tab.getAttribute("data-case-study"));
-          }
-
-          if (visualLink) {
-            var caseStudyUrl = tab.getAttribute("data-case-study");
-            if (caseStudyUrl) {
-              visualLink.setAttribute("href", caseStudyUrl);
-              visualLink.classList.remove("is-static");
-            } else {
-              visualLink.removeAttribute("href");
-              visualLink.classList.add("is-static");
-            }
-          }
+        if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+          newIndex = (currentIndex + 1) % tabs.length;
+        } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+          newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        } else if (event.key === "Home") {
+          newIndex = 0;
+        } else if (event.key === "End") {
+          newIndex = tabs.length - 1;
         }
 
-        detailPanels.forEach(function (panel) {
-          panel.classList.toggle("is-active", panel.getAttribute("data-detail") === target);
-        });
-
-        if (visualGrid) {
-          visualGrid.classList.toggle("is-all", target === "all");
+        if (newIndex !== null) {
+          event.preventDefault();
+          var newTab = tabs[newIndex];
+          newTab.focus();
+          activateTab(newTab);
         }
-
-        visualGroups.forEach(function (group) {
-          group.classList.toggle("is-active", group.getAttribute("data-detail") === target);
-        });
       });
     });
   }

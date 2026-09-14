@@ -374,6 +374,11 @@ textarea:focus-visible {
 
 .nav-toggle {
   display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 44px;
+  min-height: 44px;
   background: none;
   border: 1px solid var(--color-rule-strong);
   border-radius: var(--radius);
@@ -2011,7 +2016,7 @@ a.showcase-visual > .showcase-visual-label[hidden] {
   }
 
   .nav-toggle {
-    display: block;
+    display: inline-flex;
     margin-left: auto;
   }
 
