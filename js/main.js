@@ -1,8 +1,8 @@
 /*
   Louis Tucker Digital - main.js
-  Two jobs: the mobile nav toggle (every page) and the contact form
-  submit handler (contact page only). Kept in one file since the site
-  is small; split it up if it grows past these two concerns.
+  Shared behaviour for the mobile nav, contact form, homepage/services
+  showcase and case study image lightbox. Kept in one file since the
+  site is small; split it up if it grows past these concerns.
 */
 
 (function () {
@@ -363,6 +363,47 @@
     });
   }
 
+  function initCaseStudyLightbox() {
+    var images = document.querySelectorAll(".case-study-placeholder-image");
+    if (!images.length) return;
+
+    var dialog = document.getElementById("image-lightbox");
+    if (!dialog) return;
+
+    var lightboxImage = dialog.querySelector(".image-lightbox-image");
+    var closeBtn = dialog.querySelector(".image-lightbox-close");
+    var lastFocused = null;
+
+    function open(img) {
+      lastFocused = document.activeElement;
+      lightboxImage.src = img.src;
+      lightboxImage.alt = img.alt;
+      dialog.showModal();
+    }
+
+    function close() {
+      dialog.close();
+    }
+
+    images.forEach(function (img) {
+      img.addEventListener("click", function () {
+        open(img);
+      });
+    });
+
+    closeBtn.addEventListener("click", close);
+
+    // Clicking the backdrop closes the dialog; clicking the image itself should not.
+    dialog.addEventListener("click", function (event) {
+      if (event.target === dialog) close();
+    });
+
+    dialog.addEventListener("close", function () {
+      lightboxImage.src = "";
+      if (lastFocused) lastFocused.focus();
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initNav();
     initContactForm();
@@ -371,5 +412,6 @@
     initShowcase();
     initStickyHeader();
     initOfferCarousel();
+    initCaseStudyLightbox();
   });
 })();
