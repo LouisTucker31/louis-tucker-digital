@@ -2163,6 +2163,14 @@ a.showcase-visual > .showcase-visual-label[hidden] {
   .process-tiles {
     grid-template-columns: 1fr;
   }
+
+  .image-lightbox {
+    padding: var(--space-2);
+  }
+
+  .image-lightbox-nav {
+    display: none;
+  }
 }
 
 /* ---------- Case study image lightbox ---------- */
@@ -2173,9 +2181,10 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 
 .image-lightbox {
   border: none;
-  padding: 0;
-  background: transparent;
-  max-width: 92vw;
+  padding: var(--space-5);
+  background: #ffffff;
+  border-radius: var(--radius-panel);
+  max-width: min(96vw, 90rem);
   max-height: 92vh;
   overflow: visible;
 }
@@ -2186,8 +2195,8 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 
 .image-lightbox-image {
   display: block;
-  max-width: 92vw;
-  max-height: 92vh;
+  max-width: 80vw;
+  max-height: 80vh;
   width: auto;
   height: auto;
   border-radius: var(--radius);
@@ -2218,6 +2227,49 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 .image-lightbox-close svg {
   width: 20px;
   height: 20px;
+}
+
+.image-lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(9, 13, 21, 0.6);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+
+.image-lightbox-nav:hover {
+  background: rgba(9, 13, 21, 0.85);
+}
+
+.image-lightbox-nav:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.image-lightbox-nav:disabled:hover {
+  background: rgba(9, 13, 21, 0.6);
+}
+
+.image-lightbox-nav svg {
+  width: 24px;
+  height: 24px;
+}
+
+.image-lightbox-prev {
+  left: var(--space-3);
+}
+
+.image-lightbox-next {
+  right: var(--space-3);
 }
 
 @media (prefers-reduced-motion: no-preference) {

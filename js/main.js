@@ -367,17 +367,30 @@
     var images = document.querySelectorAll(".case-study-placeholder-image");
     if (!images.length) return;
 
+    var imageList = Array.prototype.slice.call(images);
+
     var dialog = document.getElementById("image-lightbox");
     if (!dialog) return;
 
     var lightboxImage = dialog.querySelector(".image-lightbox-image");
     var closeBtn = dialog.querySelector(".image-lightbox-close");
+    var prevBtn = dialog.querySelector(".image-lightbox-prev");
+    var nextBtn = dialog.querySelector(".image-lightbox-next");
     var lastFocused = null;
+    var currentIndex = 0;
 
-    function open(img) {
-      lastFocused = document.activeElement;
+    function show(index) {
+      currentIndex = index;
+      var img = imageList[currentIndex];
       lightboxImage.src = img.src;
       lightboxImage.alt = img.alt;
+      if (prevBtn) prevBtn.disabled = currentIndex === 0;
+      if (nextBtn) nextBtn.disabled = currentIndex === imageList.length - 1;
+    }
+
+    function open(index) {
+      lastFocused = document.activeElement;
+      show(index);
       dialog.showModal();
     }
 
@@ -385,17 +398,37 @@
       dialog.close();
     }
 
-    images.forEach(function (img) {
+    imageList.forEach(function (img, index) {
       img.addEventListener("click", function () {
-        open(img);
+        open(index);
       });
     });
 
     closeBtn.addEventListener("click", close);
 
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        if (currentIndex > 0) show(currentIndex - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        if (currentIndex < imageList.length - 1) show(currentIndex + 1);
+      });
+    }
+
     // Clicking the backdrop closes the dialog; clicking the image itself should not.
     dialog.addEventListener("click", function (event) {
       if (event.target === dialog) close();
+    });
+
+    dialog.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowLeft" && currentIndex > 0) {
+        show(currentIndex - 1);
+      } else if (event.key === "ArrowRight" && currentIndex < imageList.length - 1) {
+        show(currentIndex + 1);
+      }
     });
 
     dialog.addEventListener("close", function () {
