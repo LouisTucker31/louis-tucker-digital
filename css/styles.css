@@ -400,7 +400,6 @@ textarea:focus-visible {
   display: none;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   width: 44px;
   height: 44px;
   background: none;
@@ -414,29 +413,26 @@ textarea:focus-visible {
   border-color: var(--color-dark-rule);
 }
 
-.nav-toggle-on-dark .nav-toggle-bar {
-  background: var(--color-on-dark);
+.nav-toggle-on-dark .nav-toggle-icon {
+  color: var(--color-on-dark);
 }
 
-.nav-toggle-bar {
-  display: block;
+.nav-toggle-icon {
   width: 20px;
-  height: 2px;
-  background: var(--color-ink);
-  margin: 2.5px 0;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  height: 20px;
+  color: var(--color-ink);
 }
 
-.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
-  transform: translateY(4.5px) rotate(45deg);
+.nav-toggle-icon-close {
+  display: none;
 }
 
-.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
-  opacity: 0;
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon-menu {
+  display: none;
 }
 
-.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
-  transform: translateY(-4.5px) rotate(-45deg);
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon-close {
+  display: block;
 }
 
 /* ---------- Hero ---------- */
@@ -1195,6 +1191,25 @@ label.checkbox-option {
 .offer-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 16px -10px rgba(26, 34, 51, 0.35);
+}
+
+.offer-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+  margin-bottom: var(--space-3);
+}
+
+.offer-tag-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3a6ea8;
+  flex-shrink: 0;
 }
 
 .offer-card h3 {
