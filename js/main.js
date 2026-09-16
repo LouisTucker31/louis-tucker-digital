@@ -16,8 +16,15 @@
 
     var firstNavLink = nav.querySelector("a");
 
+    // Only move focus into/out of the menu when the toggle itself was
+    // reached by keyboard; a tap shouldn't pull up the focus outline.
+    function focusWasVisible(el) {
+      return el.matches(":focus-visible");
+    }
+
     function setOpen(isOpen) {
       var wasOpen = nav.classList.contains("is-open");
+      var toggleFocusVisible = focusWasVisible(toggle);
       nav.classList.toggle("is-open", isOpen);
       toggle.setAttribute("aria-expanded", String(isOpen));
 
@@ -29,10 +36,10 @@
         }
       }
 
-      if (isOpen && firstNavLink) {
-        firstNavLink.focus();
+      if (isOpen && firstNavLink && toggleFocusVisible) {
+        firstNavLink.focus({ preventScroll: true });
       } else if (!isOpen && wasOpen && nav.contains(document.activeElement)) {
-        toggle.focus();
+        toggle.focus({ preventScroll: true });
       }
     }
 
