@@ -3,8 +3,9 @@
   Design direction: an editorial, ledger-like layout for a solo web developer.
   White ground, alternating with a subtly blue-tinted light grey, single
   navy accent used sparingly (primary button, links, one hero line).
-  Archivo for headings and body copy. No cards, no icon tiles, no
-  gradients.
+  Archivo for headings and UI chrome, paired with a plain serif for
+  body copy to give the editorial feel real typographic contrast.
+  No cards, no icon tiles, no gradients.
 
   Header is a light, understated bar rather than a solid colour block,
   and closing CTAs sit in a soft rounded panel instead of full-bleed
@@ -35,9 +36,15 @@
   --color-dark-rule: rgba(255, 255, 255, 0.12);
   --color-on-dark: #f4f6fa;
   --color-on-dark-soft: rgba(244, 246, 250, 0.68);
+  --gradient-dark-panel: linear-gradient(160deg, #131c30 0%, var(--color-dark) 45%, var(--color-dark) 100%);
+
+  --color-error: #a3352c;
+  --color-error-ink: #7a241d;
+  --color-error-bg: #f6e9e7;
+  --color-offwhite: #f7f6f4;
 
   --font-heading: "Archivo", "Segoe UI", sans-serif;
-  --font-body: "Archivo", "Segoe UI", sans-serif;
+  --font-body: "Georgia", "Iowan Old Style", "Palatino Linotype", serif;
   --font-ui: "Archivo", "Segoe UI", sans-serif;
 
   --space-1: 0.5rem;
@@ -830,7 +837,7 @@ textarea:focus-visible {
 /* ---------- Contact page ---------- */
 
 .section-offwhite {
-  background: #f7f6f4;
+  background: var(--color-offwhite);
 }
 
 .section-offwhite .section {
@@ -941,7 +948,7 @@ select option {
 .field.has-error input,
 .field.has-error select,
 .field.has-error textarea {
-  border-color: #a3352c;
+  border-color: var(--color-error);
 }
 
 .checkbox-field {
@@ -986,7 +993,7 @@ label.checkbox-option {
 
 .field-error {
   font-size: 0.85rem;
-  color: #a3352c;
+  color: var(--color-error);
   display: none;
 }
 
@@ -1038,9 +1045,9 @@ label.checkbox-option {
 }
 
 .form-status.is-error {
-  background: #f6e9e7;
-  color: #7a241d;
-  border: 1px solid #a3352c;
+  background: var(--color-error-bg);
+  color: var(--color-error-ink);
+  border: 1px solid var(--color-error);
 }
 
 .form-submit-row {
@@ -1094,7 +1101,7 @@ label.checkbox-option {
 }
 
 .tile-section-light {
-  background: #f7f6f4;
+  background: var(--color-offwhite);
   border-top: 1px solid var(--color-rule);
   border-bottom: 1px solid var(--color-rule);
   border-radius: var(--radius-panel) var(--radius-panel) 0 0;
@@ -1106,7 +1113,7 @@ label.checkbox-option {
 }
 
 .tile-section-dark {
-  background: linear-gradient(160deg, #131c30 0%, var(--color-dark) 45%, var(--color-dark) 100%);
+  background: var(--gradient-dark-panel);
   border-radius: var(--radius-panel) var(--radius-panel) 0 0;
 }
 
@@ -1177,27 +1184,6 @@ label.checkbox-option {
 .offer-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 16px -10px rgba(26, 34, 51, 0.35);
-}
-
-.offer-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5em;
-  font-family: var(--font-ui);
-  font-weight: 600;
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-ink-soft);
-  margin-bottom: var(--space-3);
-}
-
-.offer-tag-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #3a6ea8;
-  flex-shrink: 0;
 }
 
 .offer-card h3 {
@@ -1719,7 +1705,7 @@ a.showcase-visual > .showcase-visual-label[hidden] {
 }
 
 .site-footer-dark {
-  background: linear-gradient(160deg, #131c30 0%, var(--color-dark) 45%, var(--color-dark) 100%);
+  background: var(--gradient-dark-panel);
   padding: var(--space-4) 0 var(--space-3);
 }
 
@@ -2036,7 +2022,7 @@ a.showcase-visual > .showcase-visual-label[hidden] {
   }
 
   .main-nav-on-dark.is-open {
-    background: linear-gradient(160deg, #131c30 0%, var(--color-dark) 45%, var(--color-dark) 100%);
+    background: var(--gradient-dark-panel);
     border-radius: var(--radius);
     padding: var(--space-2) var(--space-3) var(--space-3);
   }
