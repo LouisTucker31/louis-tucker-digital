@@ -31,7 +31,7 @@
 
   <link rel="preload" href="../assets/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="../css/styles.css?v=252">
+  <link rel="stylesheet" href="../css/styles.css?v=253">
 
   <script type="application/ld+json">
   {
@@ -130,15 +130,15 @@
       <div class="container">
         <div class="showcase showcase-narrow" id="showcase">
           <div class="showcase-tabs" role="tablist" aria-label="Service showcase">
-            <button class="showcase-tab is-active" type="button" role="tab" aria-selected="true" data-panel="small-business" data-desc="A hand-built website planned around your business from first idea to launch." data-image="../assets/case-studies/dorset-plumbing/harbourflowplumbing-bottom.webp" data-image-alt="Desktop homepage of the Harbour Flow Plumbing website" data-case-study="../case-studies/dorset-plumbing/" data-case-title="A new website for a Dorset plumbing business" data-case-desc="A clearer online presence for a growing local business.">Small business websites</button>
-            <button class="showcase-tab" type="button" role="tab" aria-selected="false" data-panel="redesign" data-desc="Rebuild a dated or hard-to-use site with a clearer structure and design." data-image="../assets/case-studies/accountancy-redesign/ashford_co-bottom.webp" data-image-alt="Homepage of the Ashford &amp; Co website, viewed on laptop" data-case-study="../case-studies/accountancy-redesign/" data-case-title="A modern website redesign for an accountancy firm" data-case-desc="A clearer website for complex professional services.">Website redesign</button>
-            <button class="showcase-tab" type="button" role="tab" aria-selected="false" data-panel="hosting" data-desc="Domain, hosting and HTTPS set up, connected and published." data-image="../assets/case-studies/domain-and-hosting.webp" data-image-alt="Domain and hosting setup" data-case-title="Domain and hosting setup" data-case-desc="Domain, hosting and HTTPS set up, connected and published.">Domain and hosting setup</button>
-            <button class="showcase-tab" type="button" role="tab" aria-selected="false" data-panel="content" data-desc="Organise and refine your website content, structure and calls to action." data-image="../assets/case-studies/professional-services-content/crestpointadvisorygroup-bottom.webp" data-image-alt="Homepage of the Crestpoint Advisory Group website, viewed on laptop" data-case-study="../case-studies/professional-services-content/" data-case-title="Clearer website content for a professional services business" data-case-desc="Making specialist services easier to understand.">Website content</button>
+            <button class="showcase-tab is-active" type="button" role="tab" id="showcase-tab-small-business" aria-selected="true" aria-controls="showcase-panel-small-business" data-panel="small-business" data-desc="A hand-built website planned around your business from first idea to launch." data-image="../assets/case-studies/dorset-plumbing/harbourflowplumbing-bottom.webp" data-image-alt="Desktop homepage of the Harbour Flow Plumbing website" data-case-study="../case-studies/dorset-plumbing/" data-case-title="A new website for a Dorset plumbing business" data-case-desc="A clearer online presence for a growing local business.">Small business websites</button>
+            <button class="showcase-tab" type="button" role="tab" id="showcase-tab-redesign" aria-selected="false" aria-controls="showcase-panel-redesign" data-panel="redesign" data-desc="Rebuild a dated or hard-to-use site with a clearer structure and design." data-image="../assets/case-studies/accountancy-redesign/ashford_co-bottom.webp" data-image-alt="Homepage of the Ashford &amp; Co website, viewed on laptop" data-case-study="../case-studies/accountancy-redesign/" data-case-title="A modern website redesign for an accountancy firm" data-case-desc="A clearer website for complex professional services.">Website redesign</button>
+            <button class="showcase-tab" type="button" role="tab" id="showcase-tab-hosting" aria-selected="false" aria-controls="showcase-panel-hosting" data-panel="hosting" data-desc="Domain, hosting and HTTPS set up, connected and published." data-image="../assets/case-studies/domain-and-hosting.webp" data-image-alt="Domain and hosting setup" data-case-title="Domain and hosting setup" data-case-desc="Domain, hosting and HTTPS set up, connected and published.">Domain and hosting setup</button>
+            <button class="showcase-tab" type="button" role="tab" id="showcase-tab-content" aria-selected="false" aria-controls="showcase-panel-content" data-panel="content" data-desc="Organise and refine your website content, structure and calls to action." data-image="../assets/case-studies/professional-services-content/crestpointadvisorygroup-bottom.webp" data-image-alt="Homepage of the Crestpoint Advisory Group website, viewed on laptop" data-case-study="../case-studies/professional-services-content/" data-case-title="Clearer website content for a professional services business" data-case-desc="Making specialist services easier to understand.">Website content</button>
           </div>
 
           <div class="showcase-body">
             <div class="showcase-detail">
-              <div class="showcase-detail-panel is-active" data-detail="small-business">
+              <div class="showcase-detail-panel is-active" id="showcase-panel-small-business" data-detail="small-business" role="tabpanel" aria-labelledby="showcase-tab-small-business">
                 <span class="showcase-detail-index">01</span>
                 <h2>Small business websites</h2>
                 <p>A hand-built website planned around your business from first idea to launch. Best for small businesses that need a clear, professional site without extra features they do not need.</p>
@@ -147,7 +147,7 @@
                 <p class="showcase-detail-price">From £250</p>
               </div>
 
-              <div class="showcase-detail-panel" data-detail="redesign">
+              <div class="showcase-detail-panel" id="showcase-panel-redesign" data-detail="redesign" role="tabpanel" aria-labelledby="showcase-tab-redesign">
                 <span class="showcase-detail-index">02</span>
                 <h2>Website redesign</h2>
                 <p>If your website is dated, hard to use or no longer represents your business properly, I can rebuild it with a clearer structure and design.</p>
@@ -156,7 +156,7 @@
                 <p class="showcase-detail-price">From £250</p>
               </div>
 
-              <div class="showcase-detail-panel" data-detail="hosting">
+              <div class="showcase-detail-panel" id="showcase-panel-hosting" data-detail="hosting" role="tabpanel" aria-labelledby="showcase-tab-hosting">
                 <span class="showcase-detail-index">03</span>
                 <h2>Domain and hosting setup</h2>
                 <p>I can set up your domain, hosting and HTTPS, then connect everything and publish the site.</p>
@@ -165,7 +165,7 @@
                 <p class="showcase-detail-price">From £35</p>
               </div>
 
-              <div class="showcase-detail-panel" data-detail="content">
+              <div class="showcase-detail-panel" id="showcase-panel-content" data-detail="content" role="tabpanel" aria-labelledby="showcase-tab-content">
                 <span class="showcase-detail-index">04</span>
                 <h2>Website content</h2>
                 <p>I can organise and refine your website content so people can quickly understand what you do, who it is for and what to do next.</p>
@@ -237,11 +237,11 @@
 
           <div class="accordion">
             <div class="accordion-item">
-              <button class="accordion-trigger" type="button" aria-expanded="false">
+              <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="services-accordion-panel-1" id="services-accordion-trigger-1">
                 <span>How much does a website cost?</span>
                 <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
               </button>
-              <div class="accordion-panel">
+              <div class="accordion-panel" id="services-accordion-panel-1" role="region" aria-labelledby="services-accordion-trigger-1">
                 <div class="accordion-panel-inner">
                 <p>The standard small business website starts from £250 for up to 3 pages. Extra pages are £50 each. CMS setup, photography and analytics are priced separately.</p>
                 <p>If your project needs anything else, I will confirm the cost before work starts.</p>
@@ -250,11 +250,11 @@
             </div>
 
             <div class="accordion-item">
-              <button class="accordion-trigger" type="button" aria-expanded="false">
+              <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="services-accordion-panel-2" id="services-accordion-trigger-2">
                 <span>How long does a website take to build?</span>
                 <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
               </button>
-              <div class="accordion-panel">
+              <div class="accordion-panel" id="services-accordion-panel-2" role="region" aria-labelledby="services-accordion-trigger-2">
                 <div class="accordion-panel-inner">
                 <p>Most straightforward small business websites take 1 to 2 weeks. Timing depends on the size of the site and how quickly I receive content and feedback.</p>
                 <p>I will agree a realistic timescale with you before starting.</p>
@@ -263,11 +263,11 @@
             </div>
 
             <div class="accordion-item">
-              <button class="accordion-trigger" type="button" aria-expanded="false">
+              <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="services-accordion-panel-3" id="services-accordion-trigger-3">
                 <span>What do I need to provide?</span>
                 <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
               </button>
-              <div class="accordion-panel">
+              <div class="accordion-panel" id="services-accordion-panel-3" role="region" aria-labelledby="services-accordion-trigger-3">
                 <div class="accordion-panel-inner">
                 <p>I usually need your business information, services, contact details, logo, brand colours, and any text or images you already have.</p>
                 <p>If some of that is not ready, I can help organise the content or provide photography.</p>
@@ -276,11 +276,11 @@
             </div>
 
             <div class="accordion-item">
-              <button class="accordion-trigger" type="button" aria-expanded="false">
+              <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="services-accordion-panel-4" id="services-accordion-trigger-4">
                 <span>Do I need a domain or hosting already?</span>
                 <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
               </button>
-              <div class="accordion-panel">
+              <div class="accordion-panel" id="services-accordion-panel-4" role="region" aria-labelledby="services-accordion-trigger-4">
                 <div class="accordion-panel-inner">
                 <p>No. I can work with an existing domain and hosting account, or help you choose and set them up.</p>
                 <p>Wherever possible, both stay in your name so you remain in control.</p>
@@ -289,11 +289,11 @@
             </div>
 
             <div class="accordion-item">
-              <button class="accordion-trigger" type="button" aria-expanded="false">
+              <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="services-accordion-panel-5" id="services-accordion-trigger-5">
                 <span>Can I update the website myself?</span>
                 <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
               </button>
-              <div class="accordion-panel">
+              <div class="accordion-panel" id="services-accordion-panel-5" role="region" aria-labelledby="services-accordion-trigger-5">
                 <div class="accordion-panel-inner">
                 <p>The standard package is a static website. If you need an update later, you can ask me to make it.</p>
                 <p>If you want to update selected text, images or pages yourself, I can add a content management system (CMS).</p>
@@ -374,7 +374,7 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=13"></script>
+  <script src="../js/main.js?v=14"></script>
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cbfdee1312574fa191f25027173d5398"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

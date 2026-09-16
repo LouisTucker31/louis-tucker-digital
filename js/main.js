@@ -14,7 +14,10 @@
     var header = document.querySelector(".site-header-on-dark");
     if (!toggle || !nav) return;
 
+    var firstNavLink = nav.querySelector("a");
+
     function setOpen(isOpen) {
+      var wasOpen = nav.classList.contains("is-open");
       nav.classList.toggle("is-open", isOpen);
       toggle.setAttribute("aria-expanded", String(isOpen));
 
@@ -24,6 +27,12 @@
         } else {
           header.classList.toggle("is-scrolled", window.scrollY > 40);
         }
+      }
+
+      if (isOpen && firstNavLink) {
+        firstNavLink.focus();
+      } else if (!isOpen && wasOpen && nav.contains(document.activeElement)) {
+        toggle.focus();
       }
     }
 
@@ -36,6 +45,13 @@
       if (!nav.classList.contains("is-open")) return;
       if (nav.contains(e.target) || toggle.contains(e.target)) return;
       setOpen(false);
+    });
+
+    // Close the menu with Escape, from anywhere inside it.
+    nav.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && nav.classList.contains("is-open")) {
+        setOpen(false);
+      }
     });
 
     // Close the mobile menu if the viewport grows past the breakpoint
@@ -364,10 +380,10 @@
   }
 
   function initCaseStudyLightbox() {
-    var images = document.querySelectorAll(".case-study-placeholder-image");
-    if (!images.length) return;
+    var triggers = document.querySelectorAll(".case-study-placeholder-trigger");
+    if (!triggers.length) return;
 
-    var imageList = Array.prototype.slice.call(images);
+    var triggerList = Array.prototype.slice.call(triggers);
 
     var dialog = document.getElementById("image-lightbox");
     if (!dialog) return;
@@ -381,11 +397,12 @@
 
     function show(index) {
       currentIndex = index;
-      var img = imageList[currentIndex];
+      var trigger = triggerList[currentIndex];
+      var img = trigger.querySelector("img");
       lightboxImage.src = img.src;
-      lightboxImage.alt = img.alt;
+      lightboxImage.alt = trigger.getAttribute("aria-label") || "";
       if (prevBtn) prevBtn.disabled = currentIndex === 0;
-      if (nextBtn) nextBtn.disabled = currentIndex === imageList.length - 1;
+      if (nextBtn) nextBtn.disabled = currentIndex === triggerList.length - 1;
     }
 
     function open(index) {
@@ -398,8 +415,8 @@
       dialog.close();
     }
 
-    imageList.forEach(function (img, index) {
-      img.addEventListener("click", function () {
+    triggerList.forEach(function (trigger, index) {
+      trigger.addEventListener("click", function () {
         open(index);
       });
     });
@@ -414,7 +431,7 @@
 
     if (nextBtn) {
       nextBtn.addEventListener("click", function () {
-        if (currentIndex < imageList.length - 1) show(currentIndex + 1);
+        if (currentIndex < triggerList.length - 1) show(currentIndex + 1);
       });
     }
 
@@ -426,7 +443,7 @@
     dialog.addEventListener("keydown", function (event) {
       if (event.key === "ArrowLeft" && currentIndex > 0) {
         show(currentIndex - 1);
-      } else if (event.key === "ArrowRight" && currentIndex < imageList.length - 1) {
+      } else if (event.key === "ArrowRight" && currentIndex < triggerList.length - 1) {
         show(currentIndex + 1);
       }
     });
