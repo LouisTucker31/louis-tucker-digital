@@ -401,12 +401,12 @@ textarea:focus-visible {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  min-width: 44px;
-  min-height: 44px;
+  width: 44px;
+  height: 44px;
   background: none;
   border: 1px solid var(--color-rule-strong);
   border-radius: var(--radius);
-  padding: 0.65em 0.85em;
+  padding: 0;
   cursor: pointer;
 }
 
@@ -423,12 +423,12 @@ textarea:focus-visible {
   width: 20px;
   height: 2px;
   background: var(--color-ink);
-  margin: 4px 0;
+  margin: 2.5px 0;
   transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
 .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
+  transform: translateY(4.5px) rotate(45deg);
 }
 
 .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
@@ -436,7 +436,7 @@ textarea:focus-visible {
 }
 
 .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
+  transform: translateY(-4.5px) rotate(-45deg);
 }
 
 /* ---------- Hero ---------- */
