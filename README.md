@@ -143,6 +143,22 @@ contact page, already correctly allowed. It also sets `object-src
 (form handling, input sanitisation, honeypot spam field) is already
 handled in the markup and JS.
 
+### Cloudflare Web Analytics beacon has no Subresource Integrity
+
+The one cross-origin script on the site is the Cloudflare Web
+Analytics beacon (`https://static.cloudflareinsights.com/beacon.min.js`,
+loaded on every page). It has no `integrity`/`crossorigin` attributes,
+which would normally be a gap worth closing.
+
+This is a deliberate, reviewed exception rather than an oversight:
+Cloudflare serves and rotates this file's contents on their own
+schedule as part of the analytics product, with no versioned or
+pinned URL available. A hashed `integrity` value would break
+analytics the next time Cloudflare updates the file, with no way to
+know in advance when that happens. If this script is ever swapped for
+a library served from a versioned CDN URL (jsDelivr, cdnjs), add SRI
+to it at that point.
+
 ## Structure
 
 ```
